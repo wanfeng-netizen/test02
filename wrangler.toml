@@ -1,0 +1,27 @@
+name = "iphone-webdav"
+main = "worker-webdav.js"
+compatibility_date = "2024-01-01"
+
+# R2 存储桶绑定
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "iphone-backup"  # 改成你的存储桶名
+
+# 环境变量（可选，用于认证）
+[vars]
+WEBDAV_USERNAME = "iphone"      # 设置你的用户名
+WEBDAV_PASSWORD = "your-password" # 设置你的密码
+
+# Worker 配置
+[build]
+command = ""
+[build.upload]
+format = "service-worker"
+
+# 路由配置（使用自定义域名）
+routes = [
+  # { pattern = "webdav.yourdomain.com", custom_domain = true }  # 可选
+]
+
+[triggers]
+crons = []
