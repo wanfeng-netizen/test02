@@ -1,4 +1,4 @@
-name = "iphone-webdav"
+name = "test02"
 main = "worker-webdav.js"
 compatibility_date = "2024-01-01"
 
